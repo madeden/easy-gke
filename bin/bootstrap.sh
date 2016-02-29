@@ -89,7 +89,7 @@ esac
 # Testing validity of configuration file
 [ "${p}x" = "x" ] && die "Usage: bootstrap.sh -p /path/to/project.conf [ -v debug_level ]"
 [ ! -f "${p}" ] && die "Configuration file does not exist."
-[ $(grep "YOUR_PROJECT_NAME" "${p}" | wc -l ) -eq 1 ] && \
+[ $(grep "YOUR_PROJECT_NAME" "${p}" | wc -l) -eq 1 ] && \
     die "You did not set your project in etc/project.conf. Please do and restart"
 
 # Loading configuration
@@ -97,7 +97,7 @@ log debug "Using project configuration file ${p}"
 source ${p}
 
 log debug Creating temporary files
-[ ! -d "${MYDIR}/../tmp/${PROJECT_ID}" ] && mkdir -p "${MYDIR}/../tmp//${PROJECT_ID}"
+[ ! -d "${MYDIR}/../tmp/${PROJECT_ID}" ] && mkdir -p "${MYDIR}/../tmp/${PROJECT_ID}"
 
 
 # Check install of all dependencies
@@ -131,7 +131,7 @@ function create_gke_cluster() {
     sleep 5
 
     # Use this cluster & set creds for k8s
-    switch_gke_cluster APP_CLUSTER_ID
+    switch_gke_cluster "${APP_CLUSTER_ID}"
     # Adding Secrets
     # If you want, you can store secrets in the secrets/ folder and upload them here
     # kubectl create -f "${MYDIR}/../secrets/quayio.secret.json"
