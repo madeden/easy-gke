@@ -142,9 +142,7 @@ function create_docker_cluster() {
     ensure_docker_or_install
     log debug ready to start...
 
-    switch_project
-
-    # Create a small k8s cluster on GKE
+    # Create a small k8s cluster locally
     bootstrap_k8s
 
     # Install kubectl if not there
@@ -161,3 +159,4 @@ function create_docker_cluster() {
 # Finish
 log info Bootstrap finished. You can now install the application
 
+create_docker_cluster
