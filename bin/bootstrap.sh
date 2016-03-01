@@ -149,7 +149,7 @@ function create_docker_cluster() {
     ensure_cmd_or_install_kubectl
 
     # Use this cluster & set creds for k8s
-    switch_docker_cluster
+    # switch_docker_cluster
 
     # Adding Secrets
     # If you want, you can store secrets in the secrets/ folder and upload them here
